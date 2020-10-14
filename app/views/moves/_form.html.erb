@@ -1,0 +1,37 @@
+<%= form_with(model: move, local: true) do |form| %>
+  <% if move.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(move.errors.count, "error") %> prohibited this move from being saved:</h2>
+
+      <ul>
+        <% move.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :accuracy %>
+    <%= form.number_field :accuracy %>
+  </div>
+
+  <div class="field">
+    <%= form.label :power %>
+    <%= form.number_field :power %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pp %>
+    <%= form.number_field :pp %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

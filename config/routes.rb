@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :moves
   resources :types
   resources :abilities
   resources :pokemons
